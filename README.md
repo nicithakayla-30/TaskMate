@@ -1,25 +1,32 @@
 # TaskMate ♡ — My College Task Manager
 
-TaskMate adalah aplikasi web sederhana untuk membantu mahasiswa mengatur tugas kuliah dengan tampilan cute pastel. Aplikasi dibuat menggunakan Vite dan TypeScript, serta menyimpan data secara lokal di browser menggunakan LocalStorage.
+TaskMate adalah aplikasi web untuk membantu mahasiswa mengelola tugas kuliah dengan tampilan Cute Pastel yang sederhana, menarik, dan responsif.
 
-## Fitur
-- Melihat ringkasan total, tugas selesai, dan tugas yang belum selesai.
-- Menambahkan, mengedit, dan menghapus tugas.
-- Menandai tugas selesai atau mengembalikannya ke status belum selesai.
-- Menyimpan mata kuliah, deskripsi, deadline, dan prioritas.
-- Mencari tugas dan memfilter berdasarkan mata kuliah maupun status.
-- Progress penyelesaian tugas otomatis.
-- Responsive untuk desktop dan HP.
-- Data tetap tersimpan setelah halaman dimuat ulang melalui LocalStorage.
+Aplikasi dibuat menggunakan Vite dan TypeScript. Data tugas disimpan secara lokal menggunakan LocalStorage tanpa memerlukan database.
 
-## Teknologi
-- Vite — development server dan bundler.
-- TypeScript — JavaScript dengan sistem tipe.
-- HTML dan CSS — struktur dan tampilan.
-- npm — manajemen package.
-- LocalStorage — penyimpanan data di browser.
+## Fitur Utama
 
-## Menjalankan project
+- Melihat ringkasan total tugas, tugas selesai, dan tugas tertunda.
+- Menambahkan tugas baru.
+- Mengedit dan menghapus tugas.
+- Mengubah status penyelesaian tugas.
+- Menentukan mata kuliah, deskripsi, deadline, dan prioritas.
+- Mencari dan memfilter tugas.
+- Melihat progress penyelesaian tugas.
+- Tampilan responsif untuk desktop dan HP.
+- Menyimpan data menggunakan LocalStorage.
+
+## Teknologi yang Digunakan
+
+- HTML dan CSS: struktur dan tampilan aplikasi.
+- TypeScript: bahasa pemrograman dengan sistem tipe.
+- Vite: development server dan build tool.
+- npm: mengelola package dan dependencies.
+- LocalStorage: penyimpanan data pada browser.
+- Git dan GitHub: version control dan kolaborasi kode.
+
+## Instalasi dan Menjalankan Aplikasi
+
 Pastikan Node.js dan npm sudah terpasang.
 
 ```bash
@@ -27,43 +34,111 @@ npm install
 npm run dev
 ```
 
-Buka alamat lokal yang ditampilkan Vite di terminal.
+Buka alamat localhost yang ditampilkan di terminal.
 
-## Build untuk deployment
+## Build Production
+
 ```bash
 npm run build
 npm run preview
 ```
 
-Hasil build berada di folder `dist/`. Untuk hosting statis seperti InfinityFree, unggah **isi folder `dist/`** ke folder tujuan website.
+Hasil build tersedia di folder `dist/`. Untuk deployment pada hosting statis, unggah isi folder tersebut ke direktori website.
 
-## Environment variables
-Salin `.env.example` menjadi `.env` jika diperlukan. Variabel `VITE_APP_NAME` dan `VITE_APP_VERSION` hanya konfigurasi tampilan, bukan rahasia. Jangan menaruh password atau API secret pada variabel berawalan `VITE_` karena nilainya dapat ikut masuk ke bundle browser.
+## Struktur Project
 
-## Catatan penyimpanan
-TaskMate menggunakan LocalStorage, sehingga data tersimpan di browser/perangkat yang digunakan. Data tidak otomatis tersinkron ke perangkat lain. Tombol hapus akan meminta konfirmasi sebelum menghapus tugas.
-
-## Contoh TypeScript yang digunakan
-- Primitive types: `string`, `number`, `boolean`.
-- Array: `Task[]`.
-- Interface: `Task`.
-- Type alias: `Priority`, `TaskStatus`, dan `TaskFilter`.
-- Union type: `'Tinggi' | 'Sedang' | 'Rendah'`.
-- Generic: contoh fungsi generic dapat ditambahkan pada materi demonstrasi berikutnya.
-
-## Pengembangan Selanjutnya
-
-TaskMate dikembangkan untuk membantu mahasiswa mengelola tugas kuliah dengan lebih mudah.
-
-Fitur utama:
-- Mengelola tugas kuliah.
-- Memantau deadline.
-- Mengatur prioritas tugas.
-- Melihat progres penyelesaian tugas.
-
-## Screenshot
-Tambahkan screenshot aplikasi pada folder `screenshots/`, lalu tampilkan di bagian ini, misalnya:
-
-```md
-![TaskMate Dashboard](screenshots/dashboard.png)
+```text
+TaskMate/
+├── src/
+│   ├── data/
+│   ├── examples/
+│   │   └── typescript-examples.ts
+│   ├── services/
+│   ├── types/
+│   ├── utils/
+│   ├── main.ts
+│   ├── style.css
+│   └── vite-env.d.ts
+├── .env.example
+├── .gitignore
+├── index.html
+├── package.json
+├── tsconfig.json
+└── vite.config.ts
 ```
+
+## TypeScript
+
+Contoh penerapan TypeScript pada project:
+
+1. Primitive Types: `string`, `number`, dan `boolean`.
+2. Array: `string[]` dan `Task[]`.
+3. Interface: `Student` dan `Task`.
+4. Type Alias: `TaskStatus`.
+5. Union Type: `"Pending" | "Completed" | "In Progress"`.
+6. Generic: fungsi `getData<T>()`.
+
+Contoh kode dapat dilihat pada `src/examples/typescript-examples.ts`.
+
+## npm, Vite, dan TypeScript
+
+- **npm:** package manager untuk memasang dan mengelola dependencies.
+- **Vite:** menyediakan development server dan proses build aplikasi.
+- **TypeScript:** menambahkan sistem tipe pada JavaScript.
+- **Compiler:** memeriksa dan menerjemahkan kode TypeScript menjadi JavaScript.
+- **Transpiler:** mengubah kode dari satu bentuk bahasa ke bentuk lain, seperti TypeScript ke JavaScript.
+- **Bundler:** menggabungkan dan mengoptimalkan file aplikasi untuk production.
+
+## Git dan GitHub
+
+Git digunakan untuk mencatat perubahan kode, sedangkan GitHub digunakan untuk menyimpan repository secara online.
+
+Pengembangan project menerapkan:
+- Repository GitHub.
+- Branch `main` dan branch fitur.
+- Commit untuk mencatat perubahan.
+- Push dan pull untuk sinkronisasi.
+- Pull Request untuk menggabungkan perubahan.
+- Merge conflict dan penyelesaiannya.
+
+## Environment Variables
+
+Project menyediakan `.env.example` sebagai contoh konfigurasi environment.
+
+Variabel konfigurasi:
+- `VITE_APP_NAME`
+- `VITE_APP_VERSION`
+
+Buat file `.env` berdasarkan `.env.example` jika diperlukan.
+
+File `.env` tidak dimasukkan ke repository. Jangan menyimpan password atau API secret pada variabel berawalan `VITE_` karena nilainya dapat diakses melalui browser.
+
+## Penyimpanan Data
+
+TaskMate menggunakan LocalStorage sehingga data tersimpan pada browser dan perangkat yang digunakan. Data tidak otomatis tersinkronisasi ke perangkat lain.
+
+## Screenshot Aplikasi
+
+Tambahkan screenshot aplikasi pada folder `screenshots/`.
+
+Contoh:
+
+```text
+screenshots/
+├── dashboard.png
+└── task-form.png
+```
+
+Tampilkan screenshot menggunakan Markdown:
+
+![TaskMate Dashboard](screenshots/dashboard.png)
+
+## Deployment
+
+Aplikasi dapat diakses melalui:
+
+https://nicithakayladewima.infinityfree.me/taskmate/
+
+## Repository
+
+GitHub: https://github.com/nicithakayla-30/TaskMate
