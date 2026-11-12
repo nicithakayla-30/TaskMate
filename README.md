@@ -51,6 +51,16 @@ TaskMate menggunakan LocalStorage, sehingga data tersimpan di browser/perangkat 
 - Union type: `'Tinggi' | 'Sedang' | 'Rendah'`.
 - Generic: contoh fungsi generic dapat ditambahkan pada materi demonstrasi berikutnya.
 
+## Pengembangan Selanjutnya
+
+TaskMate dikembangkan untuk membantu mahasiswa mengelola tugas kuliah dengan lebih mudah.
+
+Fitur utama:
+- Mengelola tugas kuliah.
+- Memantau deadline.
+- Mengatur prioritas tugas.
+- Melihat progres penyelesaian tugas.
+
 ## Screenshot
 Tambahkan screenshot aplikasi pada folder `screenshots/`, lalu tampilkan di bagian ini, misalnya:
 
